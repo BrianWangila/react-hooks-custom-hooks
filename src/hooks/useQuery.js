@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 // take in the url
+// const url = "http://localhost:4000/posts"
 function useQuery(url) {
   const [isLoaded, setIsLoaded] = useState(false);
   // rename `posts` to a more generic `data`
@@ -11,6 +12,7 @@ function useQuery(url) {
     fetch(url)
       .then((r) => r.json())
       .then((data) => {
+        console.log(data)
         setData(data);
         setIsLoaded(true);
       });
